@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>This is my first website</title>
-    </head>
-    <body>
-        <h1>Hello</h1>
-        <h2>Hi hi</h2>
-        <h3>Why</h3>
-    </body>
-</html>
+{% extends "homeworkapp/layout.html" %}
+
+{% block body %}
+    <h1 "style=color: grey; text-align: center; font-family: Arial, sans-serif; border: 3px solid;">Homeworkapp</h1>
+    <ul>
+        {% for homework in homeworkapp %}
+            <li>{{homework }}<li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'homeworkapp:add' %}">Add Homework</a>
+{% endblock %}
+
